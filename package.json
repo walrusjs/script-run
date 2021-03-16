@@ -1,6 +1,6 @@
 {
   "name": "@walrus/script-run",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "repository": "git@github.com:walrusjs/script-run.git",
