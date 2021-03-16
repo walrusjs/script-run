@@ -1,8 +1,20 @@
-import { execa } from '@walrus/cli-utils';
+import path from 'path';
+import fs from 'fs';
+import { execa, chalk } from '@walrus/cli-utils';
 
-export function scriptRun() {
-  const argv = process.argv;
-  argv.splice(0, 3)
+
+/**
+ * 运行脚本
+ * @param argv argv[0] 为要执行脚本的文件路径
+ */
+export function scriptRun(argv: string[]) {
+  const scriptFilePath = argv[0];
+
+  if (!fs.existsSync(path.resolve(scriptFilePath))) {
+    console.log(chalk.red(`>> run: 脚本不存在，请检查`));
+
+    process.exit(1);
+  }
 
   execa.sync(
     'node',

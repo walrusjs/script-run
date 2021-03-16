@@ -1,20 +1,11 @@
 #!/usr/bin/env node
-import { cac } from '@walrus/cli-utils';
 import { scriptRun } from './';
 
-const cli = cac(`script-run`);
+const argv = process.argv;
+argv.splice(0, 2);
 
-cli
-  .command('[...entrie]')
-  .action(() => {
-    console.log('12')
-    try {
-      scriptRun();
-    } catch {
-      process.exit(1);
-    }
-  })
-
-cli.help();
-cli.version(require('../package.json').version);
-cli.parse();
+try {
+  scriptRun(argv);
+} catch {
+  process.exit(1);
+}
