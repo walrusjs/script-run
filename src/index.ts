@@ -21,7 +21,7 @@ export function scriptRun(argv: string[]) {
     [
       '--unhandled-rejections=strict',
       '-r',
-      require.resolve('./swc-register'),
+      require.resolve('./babel-register'),
       ...argv
     ],
     {
