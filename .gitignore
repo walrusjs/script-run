@@ -2,4 +2,5 @@
 dist
 lib
 es
-yarn.lock
+
+.yarn/cache
