@@ -1,7 +1,7 @@
 import path from 'path';
-import fs from 'fs';
-import { execa, chalk } from '@walrus/cli-utils';
+import { execa, chalk, fs } from '@walrus/cli-utils';
 
+const register = require.resolve('esbuild-register')
 
 /**
  * 运行脚本
@@ -21,7 +21,7 @@ export function scriptRun(argv: string[]) {
     [
       '--unhandled-rejections=strict',
       '-r',
-      require.resolve('./babel-register'),
+      register,
       ...argv
     ],
     {
