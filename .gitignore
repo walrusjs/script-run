@@ -4,3 +4,5 @@ lib
 es
 
 .yarn/cache
+
+pnpm-global
