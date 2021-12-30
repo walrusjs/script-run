@@ -1,5 +1,5 @@
 import path from 'path';
-import { execa, chalk, fs } from '@walrus/cli-utils';
+import { execa, chalk, fsExtra } from '@walrus/cli-utils';
 
 const register = require.resolve('esbuild-register')
 
@@ -10,7 +10,7 @@ const register = require.resolve('esbuild-register')
 export function scriptRun(argv: string[]) {
   const scriptFilePath = argv[0];
 
-  if (!fs.existsSync(path.resolve(scriptFilePath))) {
+  if (!fsExtra.existsSync(path.resolve(scriptFilePath))) {
     console.log(chalk.red(`>> run: 脚本不存在，请检查`));
 
     process.exit(1);

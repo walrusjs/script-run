@@ -9,9 +9,11 @@
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.build.json"
   },
+  "dependencies": {
+    "@walrus/script-run": "1.2.1"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
-  },
-  "packageManager": "yarn@3.1.1"
+  }
 }
